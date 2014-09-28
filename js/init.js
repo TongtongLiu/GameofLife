@@ -1,19 +1,10 @@
-var rows = 10;
-var cols = 10;
-var grid = [];
+var INIT = 15;
 
 function init() {
-    var line;
-    var i, j;
+    var rows = cols = INIT;
+    var grid = [];
+    var line, i, j;
 
-    for (i = 0; i < rows; i++) {
-        $("#grid").append("<tr></tr>");
-    }
-    for (j = 0; j < cols; j++) {
-        $("#grid tr").append("<td></td>");
-    }
-
-    grid = [];
     for (i = 0; i < rows; i++) {
         line = [];
         for (j = 0; j < cols; j++) {
@@ -21,14 +12,14 @@ function init() {
         }
         grid.push(line);
     }
-
     draw(rows, cols, grid);
+
     setInterval(function() {
-        lifeCircle(rows, cols, grid);
+        grid = lifeCircle(rows, cols, grid);
         draw(rows, cols, grid);
     }, 500);
 }
 
 $(document).ready(function() {
-    init(rows, cols, grid);
+    init();
 });

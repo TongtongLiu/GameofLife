@@ -1,6 +1,8 @@
 html,
 body,
-div {
+div,
+h1,
+p {
     margin: 0;
     padding: 0;
     border: 0;
@@ -13,15 +15,115 @@ div {
 
 body {
     font-family: "Helvetica Neue", "Helvetica";
-    color: #ddd;
+    background: #faf8ef;
+    color: #776e65;
 }
 
-#grid {
-    border: 0px;
+#layout {
+    width: 520px;
+    margin: 80px auto 10px auto;
 }
-#grid tr { height: 10px; }
-#grid td { width: 10px; }
 
-.dead { background: #111; }
-.alive { background: #d00; }
+#header {
+    display: block;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
 
+#header .title {
+    font-size: 45px;
+    font-weight: bold;
+    display: block;
+    float: left;
+}
+
+#header .info {
+    float: right;
+}
+#header .frequency,
+#header .lines {
+    background: #bbada0;
+    border-radius: 3px;
+    position: relative;
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 18px;
+    width: 30px;
+    height: 20px;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+}
+#header .frequency::after {
+    content: "Frequency";
+}
+#header .lines::after {
+    content: "Lines";
+}
+#header .frequency::after,
+#header .lines::after {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    font-size: 13px;
+    line-height: 13px;
+    color: #eee4da;
+    text-align: center;   
+}
+
+#panel {
+    display: block;
+    overflow: hidden;
+    float: right;
+    margin-bottom: 20px;
+}
+
+#panel .button {
+    background: #8f7a66;
+    border-radius: 3px;
+    position: relative;
+    display: inline-block;
+    padding: 0px 25px;
+    font-size: 18px;
+    width: 70px;
+    height: 40px;
+    line-height: 40px;
+    color: #f9f6f2;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#explanation {
+    margin-top: 20px;
+}
+#explanation p {
+    font-size: 20px;
+    line-height: 2;
+}
+#explanation table {
+    font-size: 15px;
+    width: 100%;
+}
+
+#claim {
+    margin-top: 30px;
+}
+#claim p {
+    font-size: 17px;
+}
+
+#footer {
+    width: 100%;
+    margin-top: 70px;
+    font-family: "American Typewriter";
+    font-size: 14px;
+}
+#footer a {
+    text-decoration: underline;
+    color: #776e65;
+}
+#footer p {
+    text-align: center;
+}

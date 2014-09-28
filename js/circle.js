@@ -1,25 +1,24 @@
 function lifeCircle(rows, cols, grid) {
     var tempGrid = new Array(rows);
-    for (i = 0; i < cols; i++) {
+    for (i = 0; i < rows; i++) {
         tempGrid[i] = new Array(cols);
     }
 
     var flag = false;
-    var count = 0;
+    var count, j, k, i1, i2, m, n;
     for (j = 0; j < rows; j++) {
         for (k = 0; k < cols; k++) {
             flag = false;
-            //Living situation
             count = 0;
-            for (m = (j - 1 + rows) % rows; m <= (j + 1) % rows; m++) {
-                for (n = (k - 1 + cols) % cols; n <= (k + 1) % cols; n++) {
+            for (m = (j - 1 + rows) % rows, i1 = 0; i1 < 3; m = (m + 1) % rows, i1++) {
+                for (n = (k - 1 + cols) % cols, i2 = 0; i2 < 3; n = (n + 1) % cols, i2++) {
                     count += grid[m][n];
                 }
             }
             count -= grid[j][k];
+            
             if (count == 3)
                 flag = true;
-            //Dead situation
             else if (count != 2)
                 flag = false;
             else {
@@ -33,6 +32,5 @@ function lifeCircle(rows, cols, grid) {
                 tempGrid[j][k] = 0;
         }
     }
-    grid = tempGrid;
     return tempGrid;
 }

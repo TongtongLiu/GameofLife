@@ -13,13 +13,45 @@
     <script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="./js/draw.js"></script>
     <script type="text/javascript" src="./js/circle.js"></script>
+    <script type="text/javascript" src="./js/event.js"></script>
     <script type="text/javascript" src="./js/init.js"></script>
     
 </head>
 
 <body>
     <div id="layout">
-        <canvas id="canvas"></canvas>
+        <div id="header">
+            <h1 class="title">Game of Life</h1>
+            <div class="info">
+                <div class="lines">15</div>
+                <div class="frequency">2</div>
+            </div>
+        </div>
+        <div id="panel">
+            <a class="button start">Start</a>
+            <a class="button pause">Pause</a>
+        </div>
+        <canvas id="canvas" height="520px" width="520px"></canvas>
+        <div id="explanation">
+            <p><strong>How to play:</strong></p>
+            <p><table border="0">
+                <tr><td>↑/↓: Modify the frequency</td>
+                <td>←/→: Modify the lines</td></tr>
+                <tr><td>Enter: Start/Restart</td>
+                <td>Space: Pause</td></tr>
+                <tr><td>R: random dots</td>
+                <td>Click: custom dots</td></tr>
+            </table></p>
+        </div>
+        <hr>
+        <div id="claim">
+            <p>Thanks for 2048 by Gabriele Cirulli.</p>
+        </div>
+        <div id="footer">
+            <p>
+                <i>Copyright © 2014 <a href="http://hacker.siyuan12.com" target="_blank" title="Tongtong Liu"><strong>Tongtong Liu</strong></a> &amp; <a href="https://thsslimeng.github.io" target="_blank" title="Meng Li"><strong>Meng Li</strong></a></i>
+            </p>
+        </div>
     </div>
 </body>
 </html>
