@@ -1,0 +1,27 @@
+html,
+body,
+div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: 100%;
+}
+
+body {
+    font-family: "Helvetica Neue", "Helvetica";
+    color: #ddd;
+}
+
+#grid {
+    border: 0px;
+}
+#grid tr { height: 10px; }
+#grid td { width: 10px; }
+
+.dead { background: #111; }
+.alive { background: #d00; }
+
