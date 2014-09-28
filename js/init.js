@@ -2,7 +2,7 @@ var rows = 10;
 var cols = 10;
 var grid = [];
 
-function init(rows, cols, grid) {
+function init() {
     var line;
     var i, j;
 
@@ -23,6 +23,10 @@ function init(rows, cols, grid) {
     }
 
     draw(rows, cols, grid);
+    setInterval(function() {
+        lifeCircle(rows, cols, grid);
+        draw(rows, cols, grid);
+    }, 500);
 }
 
 $(document).ready(function() {
