@@ -1,11 +1,11 @@
 function modifyFrequency(status, sign) {
     if (sign > 0) {
         if (status.frequency < 20) 
-            $(".frequency").text(++status.frequency);
+            $(".frequency").text("" + (++status.frequency) + "Hz");
     }
     else {
         if (status.frequency > 1)
-            $(".frequency").text(--status.frequency);
+            $(".frequency").text("" + (--status.frequency) + "Hz");
     }
 }
 
@@ -133,7 +133,7 @@ function mouse_action() {
             y = event.offsetY - CANVAS.border;
         var m, n;
 
-        if (0 <= x && x <= CANVAS.width 
+        if (!STATUS.isStart && 0 <= x && x <= CANVAS.width 
             && 0 <= y && y <= CANVAS.height) {
             m = Math.floor(x / (CANVAS.width / STATUS.cols));
             n = Math.floor(y / (CANVAS.height / STATUS.rows));

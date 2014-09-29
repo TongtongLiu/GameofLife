@@ -10,7 +10,7 @@ var STATUS = {
 function init() {
     key_action();
     mouse_action();
-    $(".frequency").text(STATUS.frequency);
+    $(".frequency").text("" + STATUS.frequency + "Hz");
     $(".size").text("" + (STATUS.rows) + "*" + (STATUS.cols));
     STATUS.grid = setRandomDots(STATUS);
     draw(STATUS);
