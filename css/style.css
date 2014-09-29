@@ -41,14 +41,14 @@ body {
     float: right;
 }
 #header .frequency,
-#header .lines {
+#header .size {
     background: #bbada0;
     border-radius: 3px;
     position: relative;
     display: inline-block;
     padding: 15px 25px;
     font-size: 18px;
-    width: 30px;
+    width: 40px;
     height: 20px;
     line-height: 40px;
     color: #fff;
@@ -57,11 +57,11 @@ body {
 #header .frequency::after {
     content: "Frequency";
 }
-#header .lines::after {
-    content: "Lines";
+#header .size::after {
+    content: "Size";
 }
 #header .frequency::after,
-#header .lines::after {
+#header .size::after {
     position: absolute;
     top: 10px;
     left: 0;
@@ -95,6 +95,10 @@ body {
     cursor: pointer;
 }
 
+#panel .disabled {
+    background: #bbada0;
+}
+
 #explanation {
     margin-top: 20px;
 }
@@ -112,6 +116,10 @@ body {
 }
 #claim p {
     font-size: 17px;
+}
+#claim a {
+    text-decoration: underline;
+    color: #776e65;
 }
 
 #footer {

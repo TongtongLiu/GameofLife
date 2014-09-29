@@ -34,19 +34,19 @@ function draw_alive(context, x, y, w, h, r) {
     context.restore();
 }
 
-function draw(rows, cols, grid) {
+function draw(status) {
     var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
-    var h = CANVAS.height / rows,
-        w = CANVAS.width / cols,
+    var h = CANVAS.height / status.rows,
+        w = CANVAS.width / status.cols,
         r = (h > w ? w : h) / 5;
         d = (h > w ? w : h) / 20;
     var i, j;
 
     draw_background(context);
-    for (i = 0; i < rows; i++) {
-        for (j = 0; j < cols; j++) {
-            if (grid[i][j] == 0) {
+    for (i = 0; i < status.rows; i++) {
+        for (j = 0; j < status.cols; j++) {
+            if (status.grid[i][j] == 0) {
                 draw_dead(context, j * w + d + CANVAS.border, i * h + d + CANVAS.border, w - 2 * d, h - 2 * d, r);
             } else {
                 draw_alive(context, j * w + d + CANVAS.border, i * h + d + CANVAS.border, w - 2 * d, h - 2 * d, r);
