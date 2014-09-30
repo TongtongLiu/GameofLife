@@ -5,11 +5,11 @@ var stat = {
 };
 
 function testfunc(x, y) {
-    var heap = [], top;
+    var queue = [], top;
     var i, j, count;
     
     for (top = 0; top < 9; top++) {
-        heap.push(0);
+        queue.push(0);
     }
     top--;
     while (top >= 0) {
@@ -17,17 +17,17 @@ function testfunc(x, y) {
             stat.grid = [[], [], []];
             for (i = 0; i < 3; i++) {
                 for (j = 0; j < 3; j++) {
-                    stat.grid[i].push(heap[i * 3 + j]);
+                    stat.grid[i].push(queue[i * 3 + j]);
                 }
             }
-            count = -1 * heap[x * 3 + y];
+            count = -1 * queue[x * 3 + y];
             for (i = 0; i < 9; i++) {
-                count += heap[i];
+                count += queue[i];
             }
 
             stat.grid = lifeCircle(stat);
             if (count == 2) {
-                if (stat.grid[x][y] != heap[x * 3 + y])
+                if (stat.grid[x][y] != queue[x * 3 + y])
                     return false;
             } else if (count == 3) {
                 if (stat.grid[x][y] != 1)
@@ -37,17 +37,17 @@ function testfunc(x, y) {
                     return false;
             }
 
-            if (heap[top] == 0) {
-                heap[top] = 1;
+            if (queue[top] == 0) {
+                queue[top] = 1;
             } else {
-                heap[top--] = 0;
+                queue[top--] = 0;
             }
         }
         else {
-            if (heap[top] == 0) {
-                heap[top++] = 1;
+            if (queue[top] == 0) {
+                queue[top++] = 1;
             } else {
-                heap[top--] = 0;
+                queue[top--] = 0;
             }
         }
     }
