@@ -1,3 +1,4 @@
+// 迭代函数
 function lifeCircle(status) {
     var tempGrid;
     var i, j, count, m, n;

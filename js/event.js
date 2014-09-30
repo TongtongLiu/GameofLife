@@ -1,3 +1,4 @@
+// 迭代频率调节函数：用于↑/↓操作
 function modifyFrequency(status, sign) {
     if (sign > 0) {
         if (status.frequency < 20) 
@@ -9,6 +10,7 @@ function modifyFrequency(status, sign) {
     }
 }
 
+// 方格规格调节函数：用于←/→操作
 function modifyLines(status, sign) {
     var i;
 
@@ -35,6 +37,7 @@ function modifyLines(status, sign) {
     }
 }
 
+// 随机初始化函数
 function setRandomDots(status) {
     var i, j, line;
     var grid = [];
@@ -49,6 +52,7 @@ function setRandomDots(status) {
     return grid;
 }
 
+// 键盘事件绑定函数
 function key_action() {
     $("body").keydown(function(event) {
         var keynum;
@@ -106,6 +110,7 @@ function key_action() {
     });
 }
 
+// 鼠标事件绑定函数
 function mouse_action() {
     $(".start").click(function(event) {
         if (!STATUS.isStart) {

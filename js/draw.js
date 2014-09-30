@@ -1,6 +1,8 @@
+// CANVAS记录画布的基本信息
 var CANVAS = {width: 500, height: 500, border: 10};
 
-// 圆角矩形函数参考自：http://blog.sina.com.cn/s/blog_936739790101dbix.html
+// 圆角矩形绘制函数
+// 参考自：http://blog.sina.com.cn/s/blog_936739790101dbix.html
 function draw_roundRect(context, x, y, w, h, r) {
     context.beginPath();
     context.moveTo(x + r, y);
@@ -12,6 +14,7 @@ function draw_roundRect(context, x, y, w, h, r) {
     context.fill();
 }
 
+// 画布背景绘制函数
 function draw_background(context) {
     context.clearRect(0, 0, CANVAS.width + 2 * CANVAS.border, CANVAS.height + 2 * CANVAS.border);
     context.save();
@@ -20,6 +23,7 @@ function draw_background(context) {
     context.restore();
 }
 
+// 死亡细菌绘制函数
 function draw_dead(context, x, y, w, h, r) {
     context.save();
     context.fillStyle = "#ede0c8";
@@ -27,6 +31,7 @@ function draw_dead(context, x, y, w, h, r) {
     context.restore();
 }
 
+// 生存细菌绘制函数
 function draw_alive(context, x, y, w, h, r) {
     context.save();
     context.fillStyle = "#f65e3b";
@@ -34,6 +39,7 @@ function draw_alive(context, x, y, w, h, r) {
     context.restore();
 }
 
+// 方格绘制函数
 function draw(status) {
     var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
