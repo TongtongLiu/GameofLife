@@ -25,7 +25,7 @@ function modifyLines(status, sign) {
         }
     }
     else {
-        if (status.rows > 1 && status.cols > 1) {
+        if (status.rows > 3 && status.cols > 3) {
             status.grid.pop();
             for (i = 0; i < status.rows - 1; i++) {
                 status.grid[i].pop();
